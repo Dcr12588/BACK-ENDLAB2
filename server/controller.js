@@ -11,7 +11,7 @@ module.exports = {
         res.status(200).send(houses);
     },
     createHouse: (req,res) => {
-        const {address, price, imageURl} = req.body;
+        let {address, price, imageURL} = req.body;
         let newHouse = {
             id: gloabalID,
             address, 
@@ -20,7 +20,7 @@ module.exports = {
         }
         houses.push(newHouse);
         gloabalID++;
-        res.status(200).send(movies);
+        res.status(200).send(houses);
     },
     updateHouse: (req,res) => {
         const {id} = req.params;
